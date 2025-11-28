@@ -13,7 +13,7 @@ export const projects = [
     title: 'ProjectSync',
     desc: 'ProjectSync is a project management platform that streamlines team collaboration and project execution. It offers tools for planning and scheduling projects, managing tasks, real-time collaboration, user authentication, reporting and analytics, and document management, helping teams stay organized and track progress efficiently from start to finish.',
     image: '/src/assets/projectsync.jpg',
-    tech: ['Python','MySQL Workbench','HTML & CSS','JavaScript'],
+    tech: ['Springboot','ReactJs','Java','Postman','MySQL Workbench'],
     live: '',
     repo: 'https://github.com/Ban-Coca/IT342_ProjectSync'
   },
@@ -22,7 +22,7 @@ export const projects = [
     title: 'Creative Clarity',
     desc: 'Creative Clarity is an academic organizer that helps users manage tasks, track courses, and monitor academic progress. It features secure user authentication, to-do lists with due dates, progress tracking, grade reporting with dashboards, and course-specific notes. The system also supports uploading and archiving images and searching for stored files, making academic organization easier and more efficient.',
     image: '/src/assets/creativeclarity.jpg',
-    tech: ['Springboot','ReactJs','Postman', 'MySQL Workbench'],
+    tech: ['Springboot','ReactJs','Java','Postman', 'MySQL Workbench'],
     live: '',
     repo: 'https://github.com/Ban-Coca/CreativeClarity'
   }
