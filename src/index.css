@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+body{
+  background: linear-gradient(180deg,#071026 0%,#031022 50%,#01040a 100%);
+  color: var(--text-main);
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(8px) saturate(120%);
+}
+
+/* Ensure text inside translucent glass panels is readable */
+
+.glass, .glass * {
+  color: var(--text-main) !important;
+}
+
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(600px 400px at 10% 10%, rgba(108,92,231,0.10), transparent),
+              radial-gradient(500px 350px at 90% 90%, rgba(0,229,255,0.05), transparent);
+}
+
+.card-shadow {
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+.animated-bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2; /* place firmly behind site content */
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(7,18,38,0.72), rgba(6,12,25,0.62) 40%, rgba(2,6,23,0.82));
+}
+
+/* Practical summary and pill overrides to ensure visibility above glass/background */
+.practical-summary {
+  color: #00E5FF !important; /* matches tailwind accent used elsewhere */
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.practical-pill{
+  display: inline-block;
+  padding: 0.35rem 0.90rem; /* matches px-3 py-1 */
+  background: transparent !important; /* shows the site background */
+  color: #ffffff !important; /* white text */
+  border: 1px solid rgba(255,255,255,0.92) !important; /* visible white border */
+  border-radius: 9999px !important; /* pill shape */
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+@media (max-width: 420px){
+  .practical-pill { padding: 0.18rem 0.56rem; font-size: 13px; }
+}
+
+/* blob base */
+.bg-blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(36px);
+  mix-blend-mode: normal; /* disable screen blending which can wash out content */
+  opacity: 0.6; /* reduce intensity so text remains readable */
+  z-index: -1; /* keep blobs behind main content */
+}
+
+/* individual blob styles and responsive sizing */
+.blob-a {
+  width: 680px;
+  height: 520px;
+  left: -8%;
+  top: -12%;
+  background: radial-gradient(circle at 30% 30%, rgba(108,92,231,0.28), rgba(108,92,231,0.08) 40%, transparent 70%);
+  transform: translate3d(calc(var(--parallax-x,0) * -18px), calc(var(--parallax-y,0) * -12px), 0);
+}
+.blob-b {
+  width: 520px;
+  height: 480px;
+  right: -6%;
+  top: 40%;
+  background: radial-gradient(circle at 70% 70%, rgba(0,229,255,0.22), rgba(0,229,255,0.06) 40%, transparent 70%);
+  transform: translate3d(calc(var(--parallax-x,0) * 14px), calc(var(--parallax-y,0) * 8px), 0);
+}
+.blob-c {
+  width: 360px;
+  height: 360px;
+  left: 20%;
+  top: 60%;
+  background: radial-gradient(circle at 40% 40%, rgba(255,120,190,0.12), rgba(255,120,190,0.04) 40%, transparent 70%);
+  transform: translate3d(calc(var(--parallax-x,0) * -8px), calc(var(--parallax-y,0) * 6px), 0);
+}
+
+/* subtle particles canvas sits on top of the gradient but behind content */
+.bg-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* keep particles further behind */
+  pointer-events: none;
+}
+
+/* Make glass panels slightly more opaque to preserve contrast over background */
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Explicitly make section content and headings high-contrast */
+section, .container, .glass, .card-shadow {
+  color: var(--text-main) !important;
+}
+
+section h1, section h2, h1, h2, .font-semibold, .font-bold {
+  color: #ffffff !important;
+}
+
+section p, p, .text-slate-300, .text-slate-400 {
+  color: var(--text-main) !important;
+}
+
+/* small layout tweak if hero's previous .hero-bg exists — keep behind blobs */
+.hero-bg {
+  z-index: -31;
+}
+
+/* Circle display tweaks for About section */
+.circle-display {
+  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.3s ease;
+}
+.circle-display-enter { transform: scale(.96); opacity: 0 }
+.circle-display-enter-active { transform: scale(1); opacity: 1 }
