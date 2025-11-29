@@ -28,7 +28,6 @@ export default function Nav(){
           <nav className="hidden md:flex gap-6 text-slate-300">
             <a href="#about" className="hover:text-white">About</a>
             <a href="#projects" className="hover:text-white">Projects</a>
-            <a href="#services" className="hover:text-white">Services</a>
             <a href="#contact" className="hover:text-white">Contact</a>
             <a
               href="https://drive.google.com/file/d/12WjUmsN046RQAbUEpjraAmPFTH3n8Amk/view?usp=sharing"

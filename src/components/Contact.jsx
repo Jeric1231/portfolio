@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function Services() {
+export default function Contact() {
   return (
-    <section id="services" className="py-20">
+    <section id="contact" className="py-20">
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold">Let's Collaborate</h2>
